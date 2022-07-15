@@ -379,6 +379,7 @@ float_bits float_i2f(int i){
         frac=0;
     }
     else if(i<5){
-        i=1;
+        i=2;
+        
     }
 }

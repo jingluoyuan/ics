@@ -13,6 +13,8 @@ unsigned another_unsigned_high_prod(unsigned,unsigned);
 unsigned f2u(float);
 int float_le(float ,float);
 float fpwr2(int);
+float_bits float_half(float_bits f);
+float_bits float_twice(float_bits f);
 float_bits float_negate(float_bits);
 float u2f(unsigned);
 int main(){
@@ -42,6 +44,7 @@ int main(){
     printf("%d\n",float_le(+0,-0.5));
     printf("%f \t %f\n",fpwr2(128),powf(2,128));
     assert(fpwr2(126)==powf(2,126));
+    printf("0x%x\n",float_twice(0x7fc00000));
 //    for(unsigned i=0;i<0xffffffff;i++){
 //     assert(u2f(float_negate(i))==-u2f(i));
 //    }
@@ -299,12 +302,11 @@ float_bits float_negate(float_bits f){
 }
 float_bits float_twice(float_bits f){
         unsigned exp,frac;
-        unsigned u;
         unsigned sign;
         sign=f>>31;
         exp=f>>23 & 0xff;
         frac=f & 0x7fffff;
-        if(exp=0xff && !frac ){
+        if(exp==0xff && !frac ){
             return f;
         }
         else if(exp==0){
@@ -315,7 +317,7 @@ float_bits float_twice(float_bits f){
         }
         else{
             exp++;
-            if(exp==25)
+            if(exp==255)
                 frac=0;
         }   
         return (sign << 31) | (exp <<23 ) | frac;

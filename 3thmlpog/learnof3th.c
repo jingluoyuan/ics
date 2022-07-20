@@ -14,4 +14,13 @@ leaq S,D    D <-- &S
 D must be a register
 
 */
+/*
+ * shift op : sal k,D D <-- D<<k
+ * k can be 1.Imm 2. %cl
+ * x86-64: w bit  low m bit of %cl  2^m=w
+ * if %cl == 0xFF  --> salb : 7, salw :15 ,sall :31 ,salq : 63
+ * so the int  x : x<<k is x << (k mod 32);
+ */
+/* 
+ *
 

@@ -6,6 +6,3 @@ void decode1(long *xp ,long *yp,long *zp){
 	*zp=y;
 	*xp=z;
 }
-int main(){
-	return 0;
-}

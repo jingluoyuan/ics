@@ -22,5 +22,5 @@ D must be a register
  * so the int  x : x<<k is x << (k mod 32);
  */
 /* 
- *
+ */
 

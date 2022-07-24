@@ -11,6 +11,7 @@ long scale (long x,long y ,long z){
 	return t;
 }
 int main(){
+	printf("0x%x",sizeof(long));
 	return 0;
 }
 

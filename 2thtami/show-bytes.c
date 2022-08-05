@@ -18,7 +18,7 @@ void show_long(long *p);
  int main(){
     int i=-6565;
     char c=234;
-    long l=11145;
+    long l=0x1234;
     short s=12;
     show_long(&l);
     if (is_little_endian()==1)

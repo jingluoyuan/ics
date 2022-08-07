@@ -13,6 +13,11 @@ long call_proc(){
     return (x1+x2)*(x3-x4);
 }
 int main(){
+<<<<<<< HEAD
 	call_proc();
 	return 1;
 }
+=======
+    return 0;
+}
+>>>>>>> 0657d6f2ae4c0511aae5a3acdec94aa192d0bb82
